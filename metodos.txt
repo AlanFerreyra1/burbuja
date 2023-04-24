@@ -1,0 +1,83 @@
+
+package com.mycompany.metodos_ordenamiento.newpackage;
+
+import java.util.Random;
+/**
+ *
+ * @author Eq30
+ */
+public class metodos {
+    public static int[] metodoburbuja(int arreglo[]){
+         for (int i = 0; i < arreglo.length; i++) {
+            for (int j = 0; j < arreglo.length - 1; j++) {
+                
+                //comparamos el valor de x es mayor a la posicion que esta adelante
+                if (arreglo[j] > arreglo[j + 1]) {
+                    //guardamos en una variable nuestro valor j
+                    int aux = arreglo[j];
+                    //cambiamos el valor de j+1 por el mismo que j
+                    arreglo[j] = arreglo[j + 1];
+                    //cambiamos el valor de j+1 por el que guardamos en aux
+                     arreglo[j + 1] = aux;
+                }
+                System.out.print(" ");
+                
+                  System.out.print(arreglo[j]+" ");
+            }
+             System.out.println(" ");
+        }
+       return arreglo;
+        
+    }
+     public static int[] metodoseleccion(int arreglo[]){
+       for (int i = 0; i < arreglo.length - 1; i++) {
+           /* tomamos como menor el primero de los elementos que quedan por ordenar 
+            y guardamos su posición buscamos en el resto del arreglo algún elemento menor que el actual
+            si hay alguno menor se intercambia  */
+           
+            for (int j = i + 1; j < arreglo.length; j++) {
+                if (arreglo[i] > arreglo[j]) {
+                    int aux = arreglo[i];
+                    arreglo[i] = arreglo[j];
+                    arreglo[j] = aux;
+                }
+                System.out.print(" ");
+                
+                 System.out.print(arreglo[j]+" ");
+            }
+        }
+       return arreglo;
+    }
+      public static int[] metododirecto(int arreglo[]){
+       for (int i = 0; i < arreglo.length - 1; i++) {
+           /* tomamos como menor el primero de los elementos que quedan por ordenar 
+            y guardamos su posición buscamos en el resto del arreglo algún elemento menor que el actual
+            si hay alguno menor se intercambia  */
+           
+            for (int j = i + 1; j < arreglo.length; j++) {
+                if (arreglo[i] > arreglo[j]) {
+                    int aux = arreglo[i];
+                    arreglo[i] = arreglo[j];
+                    arreglo[j] = aux;
+                }
+                System.out.print(" ");
+                
+                  System.out.print(arreglo[j]+" ");
+            }
+              
+        }
+       return arreglo;
+    }
+    public static int[] llenararreglo(int arreglo[]) {
+        for (int i = 0; i < arreglo.length; i++) {
+            arreglo[i] = new Random().nextInt(100);
+        }
+        return arreglo;
+    }
+
+    public static void imprimirarreglo(int arreglo[]) {
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.print(String.valueOf(arreglo[i]) + " ");
+        }
+    }
+}
